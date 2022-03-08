@@ -31,8 +31,8 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
-  /* font-family: 'Inter', sans-serif;
-font-family: 'Lexend Deca', sans-serif; */
+  width: 100%;
+  min-height: 100vh;
 }
 
 ul {
@@ -49,8 +49,6 @@ ul {
   display: grid;
   place-content: center;
 
-  width: 100vw;
-  height: 100vh;
   background-color: var(--bg-main);
   padding: 10px;
 }
@@ -60,7 +58,6 @@ ul {
 
   background-color: var(--bg-card);
   max-width: 32rem;
-  min-height: 78.5rem;
   border-radius: 1.5rem;
   overflow: hidden;
 }
@@ -72,18 +69,18 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 24rem;
+  min-height: 24rem;
 }
 
 .card__header::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: var(--color-ascent);
-  opacity: 0.5;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
 }
 
 .card__main {
@@ -93,8 +90,7 @@ ul {
   color: var(--color-main);
   font-family: 'Inter', sans-serif;
 
-  padding: 0 4rem;
-  padding-bottom: 4rem;
+  padding: 4rem;
 }
 
 .card__title {
@@ -132,6 +128,10 @@ ul {
   font-size: 2rem;
 }
 
+.card__info-num {
+  display: block;
+}
+
 /*
 ------------------------------
  UTILITY classes
@@ -143,6 +143,7 @@ ul {
   font-size: 1rem;
   color: var(--color-paragraph);
   letter-spacing: 0.5px;
+  font-weight: 400;
 }
 
 .txt-bold {
@@ -167,8 +168,6 @@ ul {
   .card {
     grid-template-columns: 1fr 1fr;
     max-width: 100rem;
-    min-height: 40rem;
-    padding-bottom: 0;
   }
 
   .card__header {
